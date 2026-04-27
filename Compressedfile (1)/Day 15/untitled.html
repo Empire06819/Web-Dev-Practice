@@ -1,0 +1,271 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dark Mode Personal Site — Senuga</title>
+  <meta name="description" content="A clean, responsive personal site with dark-mode support and theme toggle." />
+  <style>
+    /* ========== Root theme variables ========== */
+    :root{
+      --bg: brown; /* dark background (default) */
+      --card: #0b1220;
+      --text: #e6eef8;
+      --muted: #9fb0c8;
+      --accent: #7dd3fc;
+      --glass: rgba(255,255,255,0.04);
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(2,6,23,0.6);
+    }/* Light theme overrides */
+.theme-light{
+  --bg: #f7fbff;
+  --card: #ffffff;
+  --text: #07142a;
+  --muted: #5b6b7a;
+  --accent: #0369a1;
+  --glass: rgba(6,18,30,0.03);
+  --shadow: 0 8px 22px rgba(6,18,30,0.08);
+}
+
+/* Respect user preference initially */
+@media (prefers-color-scheme: brown){
+  :root{ /* when the system prefers light, start in light */ }
+  /* JS will apply the .theme-light class if desired */
+}
+
+/* ========== Base reset ========== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: brown;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  padding:24px;
+}
+
+/* ========== Layout ========== */
+.container{
+  max-width:980px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:20px;
+}
+
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.brand{
+  display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit
+}
+.avatar{
+  width:50px;height:50px;border-radius:12px;background:linear-gradient(135deg,var(--accent),transparent);
+  display:inline-grid;place-items:center;font-weight:500;color:inherit;
+  box-shadow:var(--shadow);
+}
+
+nav{display:flex;gap:12px;align-items:center}
+nav a{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px;font-size:14px}
+nav a:hover, nav a:focus{color:var(--text);background:var(--glass);outline:none}
+
+/* Theme toggle */
+.theme-toggle{
+  display:inline-flex;align-items:center;gap:8px;padding:8px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);
+  cursor:pointer;color:var(--muted);
+}
+.theme-toggle:focus{outline:2px solid var(--accent);outline-offset:2px}
+
+main{
+  display:grid;grid-template-columns: 1fr 320px;gap:20px;align-items:start;
+}
+
+/* Card */
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.03)
+}
+
+/* Hero */
+.hero{padding:28px;border-radius:16px;display:flex;gap:18px;align-items:center}
+.hero h1{margin:0;font-size:28px}
+.hero p{margin:6px 0 0;color:var(--muted)}
+
+/* Projects list */
+.projects{display:grid;gap:12px}
+.project{display:flex;flex-direction:column;background:var(--card);padding:12px;border-radius:12px}
+.project h3{margin:0 0 6px;font-size:16px}
+.project p{margin:0;color:var(--muted);font-size:14px}
+
+/* Sidebar */
+aside .info{display:flex;flex-direction:column;gap:12px}
+.stat{display:flex;justify-content:space-between;align-items:center}
+.muted{color:var(--muted);font-size:13px}
+
+footer{color:var(--muted);text-align:center;padding:18px 0}
+
+/* Responsive */
+@media (max-width:900px){
+  main{grid-template-columns:1fr}
+  .avatar{width:44px;height:44px}
+}
+
+@media (max-width:480px){
+  body{padding:16px}
+  .brand .name{display:none}
+  .avatar{width:40px;height:40px}
+  header{gap:8px}
+}
+
+/* Small utility */
+.btn{display:inline-block;padding:8px 12px;border-radius:10px;background:var(--accent);color:var(--bg);text-decoration:none;font-weight:600}
+
+  </style>
+</head>
+<body>
+  <div class="container" id="site">
+    <header>
+      <a class="brand" href="#">
+        <div class="avatar" aria-hidden="true">BigK</div>
+        <div>
+          <div class="name" style="font-weight:700">
+          Senuga</div>
+          <div class="muted" style="font-size:12px">Frontend Developer • Photographer</div>
+        </div>
+      </a><div style="display:flex;align-items:center;gap:12px">
+    <nav aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="theme-toggle" id="themeToggle" aria-pressed="false" title="Toggle theme">
+      <span id="themeIcon" aria-hidden="true">🌙</span>
+      <span class="muted">Theme</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="card hero">
+      <div style="flex:1">
+        <h1>Hello — I'm Senuga Oluwakayayode Samuel</h1>
+        <p>Building delightful front-end experiences. I also shoot photos and tinker with small web projects.</p>
+        <p style="margin-top:12px"><a class="btn" href="#projects">See my work</a></p>
+      </div>
+      <div style="width:120px;text-align:center">
+        <img src="1000195889.jpg" alt="Your avatar" style="width:100%;border-radius:12px;box-shadow:var(--shadow)" />
+      </div>
+    </div>
+
+    <div id="about" class="card" style="margin-top:18px">
+      <h2 style="margin-top:0">About</h2>
+      <p class="muted">Short bio — a couple of lines that tell people who you are, what you're building, and how to contact you.</p>
+      <ul style="margin-top:12px;color:var(--muted);padding-left:18px">
+        <li>Frontend development: HTML, CSS, JavaScript</li>
+        <li>Photography & visual storytelling</li>
+        <li>Open to collaboration and freelance</li>
+      </ul>
+    </div>
+
+    <div id="projects" class="card" style="margin-top:18px">
+      <h2 style="margin-top:0">Selected Projects</h2>
+      <div class="projects">
+        <article class="project">
+          <h3>Portfolio site</h3>
+          <p>Static site showcasing UI work and photo galleries.</p>
+        </article>
+        <article class="project">
+          <h3>Poultry Farm Management System</h3>
+          <p>Student project: inventory, attendance, and record-keeping system.</p>
+        </article>
+        <article class="project">
+          <h3>Mini E‑commerce</h3>
+          <p>Simple product card layout with responsive grid and cart UX.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <aside>
+    <div class="info card">
+      <div>
+        <h3 style="margin:0">Contact</h3>
+        <p class="muted" style="margin-top:6px">Say hello — <a href="mailto:you@example.com" style="color:var(--accent);text-decoration:none">senugaoluwakay@gmail.com</a></p>
+      </div>
+
+      <div class="stat muted"><span>Location</span><span>Nigeria</span></div>
+      <div class="stat muted"><span>Availability</span><span>Open to work</span></div>
+
+      <div style="margin-top:6px">
+        <a class="btn" href="#contact">Hire me</a>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h4 style="margin:0">Skills</h4>
+      <p class="muted" style="margin-top:8px">HTML • CSS • JavaScript • React • Photography</p>
+    </div>
+  </aside>
+</main>
+
+<section id="contact" class="card" style="margin-top:18px">
+  <h2 style="margin-top:0">Contact</h2>
+  <p class="muted">Prefer email? Send a note to <a href="mailto:senugaoluwakay@gmail.com" style="color:var(--accent);text-decoration:none"senugaoluwakay@gmail.com</a>.</p>
+</section>
+
+<footer>
+  © <span id="year"></span> Senuga 
+</footer>
+
+  </div>  <script>
+    // Simple theme toggle with persistence
+    (function(){
+      const root = document.documentElement;
+      const site = document.getElementById('site');
+      const toggle = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeIcon');
+
+      // Apply saved theme or system preference
+      const saved = localStorage.getItem('theme');
+      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+
+      function applyTheme(name){
+        if(name === 'light'){
+          document.body.classList.add('theme-light');
+          toggle.setAttribute('aria-pressed','true');
+          icon.textContent = '☀️';
+        } else {
+          document.body.classList.remove('theme-light');
+          toggle.setAttribute('aria-pressed','false');
+          icon.textContent = '🌙';
+        }
+      }
+
+      // initial
+      if(saved === 'light' || (!saved && prefersLight)) applyTheme('light');
+      else applyTheme('dark');
+
+      toggle.addEventListener('click', function(){
+        const isLight = document.body.classList.contains('theme-light');
+        const next = isLight ? 'dark' : 'light';
+        applyTheme(next);
+        localStorage.setItem('theme', next);
+      });
+
+      // small accessibility: allow 'T' key to toggle theme
+      window.addEventListener('keydown', (e)=>{ if(e.key.toLowerCase()==='t'){ toggle.click(); }});
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script></body>
+</html>

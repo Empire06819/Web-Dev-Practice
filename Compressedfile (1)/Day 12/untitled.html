@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Team Members — Grid</title>
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #7c5cff;
+      --glass: rgba(255,255,255,0.03);
+      --gap: 20px;
+      --radius: 12px;
+      --max-width: 1100px;
+      --card-padding: 20px;
+      --shadow: 0 10px 30px rgba(2,6,23,0.6);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color-scheme: dark;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:gold;
+      color:#black;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:36px;
+      -webkit-font-smoothing:antialiased;
+      padding-top: 12px;
+    }
+
+    .team-wrap{
+      width:100%;
+      max-width:var(--max-width);
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .team-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .team-header h1{font-size:1.25rem;margin:0}
+    .team-header p{margin:0;color:var(--muted);font-size:0.95rem}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:var(--gap);
+      margin-top:6px;
+      background: black;
+    }
+
+    /* card */
+    .member{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:var(--card-padding);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,0.03);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      transition:transform .22s ease, box-shadow .22s ease;
+      min-height:220px;
+    }
+    .member:hover{ transform: translateY(-6px); box-shadow:0 18px 40px rgba(2,6,23,0.8); }
+
+    .avatar{
+      width:82px;
+      height:82px;
+      border-radius:14px;
+      overflow:hidden;
+      flex:0 0 82px;
+      border:2px solid rgba(255,255,255,0.04);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .top{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .who{display:flex;flex-direction:column}
+    .who .name{font-weight:600;font-size:1rem}
+    .who .role{font-size:0.86rem;color:var(--muted);margin-top:4px}
+
+    .bio{font-size:0.9rem;color:#dbe7f8;line-height:1.4;margin-top:6px;flex:1}
+
+    .meta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .socials{
+      display:flex;
+      gap:8px;
+    }
+    .social{
+      width:36px;height:36px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;
+      background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);cursor:pointer;
+      transition:transform .15s ease, background .15s ease;
+    }
+    .social:active{transform:translateY(1px)}
+    .social svg{width:16px;height:16px;display:block;fill:currentColor;color:var(--muted)}
+
+    /* badges or skills */
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:0.78rem;padding:6px 8px;border-radius:999px;background:var(--glass);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+    /* responsive */
+    @media (max-width:1100px){ .grid{grid-template-columns:repeat(3,1fr)} }
+    @media (max-width:820px){ .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:520px){ .grid{grid-template-columns:1fr} .team-header{flex-direction:column;align-items:flex-start} }
+
+  </style>
+</head>
+<body>
+  <main class="team-wrap" aria-label="Team members">
+    <div class="team-header">
+      <div>
+        <h1>Meet the Team</h1>
+      </div>
+      <div class="tags" aria-hidden="true">
+        <span class="tag">Design</span>
+        <span class="tag">Frontend</span>
+        <span class="tag">Photography</span>
+      </div>
+    </div>
+
+    <section class="grid">
+      <!-- Member 1 -->
+      <article class="member">
+        <div class="top">
+          <div class="avatar"><img src="IMG_2095.jpg" alt="SELF"></div>
+          <div class="who">
+            <span class="name">Senuga Oluwakayode Samuel</span>
+            <span class="role">Rising Frontend Developer</span>
+          </div>
+        </div>
+        <p class="bio">Builds responsive interfaces and loves turning design into clean code. Focuses on accessibility and performance.</p>
+        <div class="meta">
+          <div class="tags" aria-hidden="true">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JS(in view)</span>
+            <span class="tag">Photoshop</span>
+          </div>
+          <div class="socials" aria-label="Aisha social links">
+            <button class="social" title="Twitter (placeholder)">
+              <!-- simple Twitter icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 5.92c-.64.28-1.32.48-2.04.56.73-.44 1.28-1.14 1.54-1.97-.68.4-1.44.7-2.24.86C18.6 4.6 17.54 4 16.36 4c-1.7 0-3.08 1.4-3.08 3.12 0 .24.02.48.08.71C9.38 7.7 6 5.9 3.9 3.04c-.26.46-.4 1-.4 1.56 0 1.08.54 2.04 1.36 2.6-.6-.02-1.16-.18-1.64-.44v.04c0 1.5 1.08 2.78 2.5 3.06-.44.12-.9.18-1.36.06.38 1.16 1.46 2 2.76 2.02C7.9 15.9 6.52 16.5 5 16.5c-.36 0-.7 0-1.04-.06 1.02.64 2.24 1.02 3.56 1.02 7.28 0 11.28-6 11.28-11.2v-.5c.78-.56 1.44-1.24 1.96-2.02-.72.34-1.5.58-2.28.68z"/></svg>
+            </button>
+            <button class="social" title="Website (placeholder)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 17.93V20h-2v-.07A8.01 8.01 0 0 1 4.07 13H4v-2h.07A8.01 8.01 0 0 1 11 4.07V4h2v.07A8.01 8.01 0 0 1 19.93 11H20v2h-.07A8.01 8.01 0 0 1 13 19.93z"/></svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

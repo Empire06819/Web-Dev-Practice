@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Sign Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Hidden radio buttons -->
+      <input type="radio" name="tab" id="login" checked />
+      <input type="radio" name="tab" id="signup" />
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <label for="login" class="tab">Login</label>
+        <label for="signup" class="tab">Sign Up</label>
+      </div>
+
+      <!-- Login Form -->
+      <form class="form login-form">
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button class="btn">Login</button>
+        <p class="footer">&#169 IYA IJEBU FOODS</p>
+      </form>
+
+      <!-- Sign Up Form -->
+      <form class="form signup-form">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button class="btn">Create Account</button>
+        <p class="footer">&#169 IYA IJEBU FOODS</p>
+      </form>
+    </div>
+  </body>
+</html>

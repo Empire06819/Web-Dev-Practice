@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Hero section with background image */
+.event-hero {
+  position: relative;
+  background: url("1000208798-removebg-preview.png") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Dark overlay for readability */
+.event-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); 
+  z-index: 1;
+}
+
+/* Content area */
+.event-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.1); 
+  padding: 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(6px); 
+}
+
+/* Headings and text */
+.event-content h2 {
+  font-size: 2rem;
+  color: #f4b400; 
+  margin-bottom: 10px;
+}
+
+.event-content p {
+  font-size: 1.1rem;
+  color: #black;
+  margin-bottom: 30px;
+}
+
+/* Schedule list */
+.schedule {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.schedule h3 {
+  color: #black;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #f4b400;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.schedule ul {
+  list-style: none;
+  padding: 0;
+}
+
+.schedule li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.schedule li:last-child {
+  border-bottom: none;
+}
+
+.schedule strong {
+  color: #blue;
+}
+
+/* CTA button */
+.cta-btn {
+  background-color: #f4b400;
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #e2a100;
+  transform: scale(1.05);
+}

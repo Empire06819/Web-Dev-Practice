@@ -1,0 +1,194 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Testimonials / Reviews</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#7c5cff;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --max-width:1100px;
+      --gap:18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      background-size: cover;      
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;               
+      margin: 0;                   
+      background-image: url('file_000000002e6472308d50fb0319428696.png');
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 18px;
+      color:#e6eef8;
+    }
+  .testimonials{
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.title{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+h2{margin:0;font-size:1.35rem;letter-spacing:-0.2px}
+p.lead{margin:0;color:var(--muted);font-size:0.95rem}
+
+/* grid */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--gap);
+}
+
+/* single card */
+.card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  min-height:170px;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(2,6,23,0.75)}
+
+.quote{
+  font-size:0.98rem;
+  line-height:1.5;
+  color:#dfe9f8;
+  position:relative;
+  padding-left:28px;
+}
+.quote::before{
+  content:\"\201C\"; /* left double quotation mark */
+  position:absolute;
+  left:0;top:-6px;
+  font-size:2.4rem;
+  color:var(--accent);
+  opacity:0.95;
+  font-weight:700;
+  line-height:1;
+}
+
+.meta{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:auto;
+}
+.avatar{
+  width:48px;height:48px;border-radius:999px;flex:0 0 48px;overflow:hidden;border:2px solid rgba(255,255,255,0.04);
+}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+.who{display:flex;flex-direction:column}
+.who .name{font-weight:600;font-size:0.98rem}
+.who .role{font-size:0.82rem;color:var(--muted)}
+
+.rating{margin-left:auto;display:flex;gap:4px;align-items:center}
+.star{width:18px;height:18px;display:inline-block}
+
+/* small screens */
+@media (max-width:980px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+  .header{align-items:flex-start}
+  h2{font-size:1.1rem}
+  .cards{grid-template-columns:1fr}
+  .meta{gap:10px}
+}
+
+/* small utility */
+.badge{
+  font-size:0.78rem;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);border:1px solid rgba(255,255,255,0.02)
+}
+
+  </style>
+</head>
+<body>
+  <section class="testimonials" aria-labelledby="testimonialsTitle">
+    <div class="header">
+      <div class="title">
+        <h2 id="testimonialsTitle">What people are saying</h2>
+        <p class="lead">Real reviews from users who loved the experience.</p>
+      </div>
+      <div class="badge">4.9 average — 1,248 reviews</div>
+    </div><div class="cards">
+
+  <article class="card">
+    <p class="quote">This tool transformed how we manage tasks. The UI is clean, performance is excellent, and support was helpful when we needed them.</p>
+    <div class="meta">
+      <div class="avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcd" alt="Avatar of Aisha"/></div>
+      <div class="who"><span class="name">Aisha Bello</span><span class="role">Product Manager, SoftWave</span></div>
+      <div class="rating" aria-hidden="true">
+        <!-- 5 filled stars using inline SVG -->
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <p class="quote">Excellent onboarding and the analytics gave our team immediate insight. Would recommend to any small business owner.</p>
+    <div class="meta">
+      <div class="avatar"><img src="b13915e9ad484ce298a9b8b10055ef46.jpg" alt="Avatar of Daniel"/></div>
+      <div class="who"><span class="name">Senuga Inioluwa</span><span class="role">Founder, Debisi Thrift & Glow</span></div>
+      <div class="rating" aria-hidden="true">
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <p class="quote">Fast, reliable and beautifully designed. The mobile experience is great — we saw engagement increase right away.</p>
+    <div class="meta">
+      <div class="avatar"><img src="IMG_2095.jpg" alt="Avatar of Mercy"/></div>
+      <div class="who"><span class="name">Senuga Ade</span><span class="role">CEO, ABEG OH</span></div>
+      <div class="rating" aria-hidden="true">
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.431L23.6 9.75l-5.8 5.657L19.335 24 12 19.897 4.665 24l1.535-8.593L.4 9.75l7.932-1.732z"/></svg>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+  </section>
+</body>
+</html>

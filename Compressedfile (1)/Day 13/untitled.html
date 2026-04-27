@@ -1,0 +1,283 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Service Comparison Table</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa6b2;
+      --accent:#3b82f6;
+      --accent-2:#7c3aed;
+      --glass: rgba(255,255,255,0.04);
+      --success:#22c55e;
+      --danger:#ef4444;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:brown;
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+    .container{
+      width:100%;
+      max-width:1100px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:12px;
+      padding:22px;
+      box-shadow:0 6px 30px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px);
+    }
+    h1{
+      margin:0 0 12px 0;
+      font-size:20px;
+      letter-spacing: -0.2px;
+    }
+    p.lead{
+      margin:0 0 18px 0;
+      color:var(--muted);
+      font-size:14px;
+    }/* table wrapper for responsiveness */
+.table-wrapper{
+  width:100%;
+  overflow:auto;
+  border-radius:10px;
+  background:var(--card);
+  padding:14px;
+}
+
+table{ 
+  border-collapse: collapse;
+  width:100%;
+  min-width:760px; /* keeps columns readable on desktop */
+}
+thead th{
+  text-align:left;
+  padding:14px 16px;
+  font-weight:600;
+  font-size:13px;
+  color:#dbeafe;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  position:sticky;
+  top:0;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  backdrop-filter: blur(4px);
+}
+tbody td{
+  padding:14px 16px;
+  font-size:14px;
+  color:var(--muted);
+  border-bottom:1px dashed rgba(255,255,255,0.03);
+  vertical-align:middle;
+}
+
+/* Plan column styles */
+.plan{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.plan .badge{
+  display:inline-block;
+  min-width:44px;
+  height:44px;
+  border-radius:8px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:white;
+  box-shadow:0 4px 18px rgba(60,110,255,0.12);
+}
+.plan h3{margin:0;font-size:15px;color:#e6f0ff}
+.plan small{display:block;color:var(--muted);font-size:12px}
+
+/* Price column */
+.price{font-weight:700;color:#e6f0ff}
+.price small{display:block;color:var(--muted);font-weight:500}
+
+/* Feature check */
+.check{
+  display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--muted)
+}
+.check.ok{color:var(--success)}
+.check.no{color:var(--danger)}
+
+/* CTA button */
+.btn{
+  display:inline-block;padding:8px 12px;border-radius:8px;font-weight:700;text-decoration:none;color:#06203b;background:linear-gradient(90deg,var(--accent),#2563eb);box-shadow:0 6px 18px rgba(37,99,235,0.12);
+}
+
+/* Small screen improvements */
+@media (max-width:780px){
+  body{padding:18px}
+  .container{padding:14px}
+  thead th, tbody td{padding:12px}
+  table{min-width:640px}
+}
+
+@media (max-width:520px){
+  .table-wrapper{padding:8px}
+  table{min-width:520px}
+  thead th{font-size:12px}
+  tbody td{font-size:13px}
+}
+
+/* utility */
+.muted{color:var(--muted);font-size:13px}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Service Comparison</h1>
+    <p class="lead"Choose .</p><div class="table-wrapper" role="region" aria-label="Service comparison table">
+  <table>
+    <thead>
+      <tr>
+        <th style="min-width:220px">Features</th>
+        <th>Basic</th>
+        <th>Pro</th>
+        <th>Premium</th>
+        <th>Deluxe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="plan">
+            <div>
+              <small class="muted">Price</small>
+            </d>
+          </div>
+        </td>
+        <td class="price">&#x20A6;0 <small class="muted">Free</small></td>
+        <td class="price">&#x20A6;12,000 <small class="muted">/month</small></td>
+        <td class="price">&#x20A6;30,000<small class="muted">/month</small></td>
+        <td class="price">&#x20A6;70,000<small class="muted">/month</small></td>
+      </tr>
+
+      <tr>
+        <td>Storage</td>
+        <td>5 GB</td>
+        <td>50 GB</td>
+        <td>Unlimited</td>
+        <td>Unlimited</td>
+      </tr>
+
+      <tr>
+        <td>Bandwidth</td>
+        <td>Basic</td>
+        <td>Standard</td>
+        <td>High</td>
+        <td>Highest</td>
+      </tr>
+
+      <tr>
+        <td>Support</td>
+        <td>
+          <span class="check no">✖ Email only</span>
+        </td>
+        <td>
+          <span class="check ok">✔ Email + Chat</span>
+        </td>
+        <td>
+          <span class="check ok">✔ Priority Support</span>
+        </td>
+        <td>
+          <span class="check ok">All Round Supoort</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Custom Domain</td>
+        <td>
+          <span class="check no">✖</span>
+        </td>
+        <td>
+          <span class="check ok">✔</span>
+        </td>
+        <td>
+          <span class="check ok">✔</span>
+        </td>
+        <td>
+          <span class="check ok">Hell Yeah</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Analytics</td>
+        <td>
+          <span class="check no">Basic</span>
+        </td>
+        <td>
+          <span class="check ok">Advanced</span>
+        </td>
+        <td>
+          <span class="check ok">Advanced + Reports</span>
+        </td>
+        <td>
+          <span class="check ok">No Down Time</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Team accounts</td>
+        <td>
+          <span class="check no">✖</span>
+        </td>
+        <td>
+          <span class="check ok">Up to 5</span>
+        </td>
+        <td>
+          <span class="check ok">Unlimited</span>
+        </td>
+        <td>
+          <span class="check ok">The Least Worker Has An Account</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Backup & Security</td>
+        <td>Weekly</td>
+        <td>Daily</td>
+        <td>Real-time + WAF</td>
+        <td>Personal Specialist</td>
+      </tr>
+
+      <tr>
+        <td>Recommended for</td>
+        <td class="muted">Hobbyists / Testing</td>
+        <td class="muted">Creators / Small teams</td>
+        <td class="muted">Businesses / Agencies</td>
+        <td class="muted">Whoever Wants</td>
+        
+      </tr>
+
+      <tr>
+        <td></td>
+        <td><a class="btn" href="#">Get Basic</a></td>
+        <td><a class="btn" href="#">Get Pro</a></td>
+        <td><a class="btn" href="#">Get Premium</a></td>
+        <td><a class="btn" href="#">Get Deluxe</a></td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pricing Tables — Gym & Café</title>
+  <style>
+    :root{
+      --bg:#gold; --card:#ffffff; --accent:#6b5b95; --muted:#6b7280; --success:#10b981;
+      --shadow: 0 8px 24px rgba(45,55,72,0.08);
+      --radius:16px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#f8fafc,#f6f7fb);color:#0f172a}
+    .wrap{max-width:1100px;margin:48px auto;padding:20px}header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+h1{font-size:20px;margin:0}
+p.lead{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+.switcher{display:flex;gap:8px;align-items:center}
+.switch-btn{background:transparent;border:1px solid rgba(15,23,42,0.06);padding:8px 12px;border-radius:12px;cursor:pointer}
+.switch-btn.active{background:var(--accent);color:white;border-color:transparent;box-shadow:var(--shadow)}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+@media (max-width:880px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+
+.card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 34px rgba(15,23,42,0.12)}
+
+.plan{display:flex;align-items:center;justify-content:space-between}
+.plan h3{margin:0;font-size:16px}
+.price{font-weight:700;font-size:18px}
+
+.features{color:var(--muted);font-size:14px;line-height:1.5}
+
+.cta{margin-top:8px}
+.btn{display:inline-block;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:600}
+.btn.primary{background:var(--accent);color:gold}
+.btn.ghost{background:transparent;border:1px solid rgba(15,23,42,0.06);color:var(--muted)}
+
+.badge{display:inline-block;background:#eef2ff;color:#312e81;padding:6px 8px;border-radius:999px;font-size:12px}
+
+/* special styling for featured */
+.card.popular{border:2px solid rgba(107,91,149,0.12);transform:translateY(-4px)}
+.card.popular .plan h3{color:var(--accent)}
+
+/* small footer note */
+footer.note{margin-top:18px;color:var(--muted);font-size:13px}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Pricing Tables — Gym & Café</h1>
+        <p class="lead">Clean, a responsible community for growth.</p>
+      </div>
+      <div class="switcher" role="tablist" aria-label="Select pricing">
+        <button class="switch-btn active" data-target="gym" role="tab" aria-selected="true">Gym</button>
+        <button class="switch-btn" data-target="cafe" role="tab" aria-selected="false">Café</button>
+      </div>
+    </header><!-- GYM PRICING -->
+<section id="gym" class="pricing-set" aria-hidden="false">
+  <div class="cards">
+    <article class="card">
+      <div class="plan">
+        <h3>Basic</h3>
+        <div class="price">₦5,000<span style="font-weight:400;font-size:13px"> / month</span></div>
+      </div>
+      <div class="features">
+        <p>• Access to gym equipment (6am–6pm)</p>
+        <p>• 1 free fitness assessment</p>
+        <p>• Locker access (shared)</p>
+      </div>
+      <div class="cta"><a class="btn ghost" href="#">Join Basic</a></div>
+    </article>
+
+    <article class="card popular">
+      <div class="plan">
+        <h3>Standard <span class="badge">Best value</span></h3>
+        <div class="price">₦10,000<span style="font-weight:400;font-size:13px"> / month</span></div>
+      </div>
+      <div class="features">
+        <p>• 24/7 access</p>
+        <p>• Group fitness classes</p>
+        <p>• Personal locker + 2 guest passes</p>
+      </div>
+      <div class="cta"><a class="btn primary" href="#">Get Standard</a></div>
+    </article>
+
+    <article class="card">
+      <div class="plan">
+        <h3>Premium</h3>
+        <div class="price">₦20,000<span style="font-weight:400;font-size:13px"> / month</span></div>
+      </div>
+      <div class="features">
+        <p>• All Standard features</p>
+        <p>• 4 x 1-on-1 training sessions</p>
+        <p>• Weekly protein shake + priority support</p>
+      </div>
+      <div class="cta"><a class="btn ghost" href="#">Go Premium</a></div>
+    </article>
+  </div>
+</section>
+
+<!-- CAFE PRICING -->
+<section id="cafe" class="pricing-set" aria-hidden="true" style="display:none;margin-top:0">
+  <div class="cards">
+    <article class="card">
+      <div class="plan">
+        <h3>Light Brew</h3>
+        <div class="price">₦1,500</div>
+      </div>
+      <div class="features">
+        <p>• 1 Coffee or Tea</p>
+        <p>• 1 Pastry of choice</p>
+        <p>• Free Wi‑Fi (1 hour)</p>
+      </div>
+      <div class="cta"><a class="btn ghost" href="#">Order Light Brew</a></div>
+    </article>
+
+    <article class="card popular">
+      <div class="plan">
+        <h3>Chill & Chat <span class="badge">Popular</span></h3>
+        <div class="price">₦3,000</div>
+      </div>
+      <div class="features">
+        <p>• 2 Drinks (coffee/tea/juice)</p>
+        <p>• 1 Snack</p>
+        <p>• Wi‑Fi (2 hours) + Reserved seat</p>
+      </div>
+      <div class="cta"><a class="btn primary" href="#">Reserve Chill & Chat</a></div>
+    </article>
+
+    <article class="card">
+      <div class="plan">
+        <h3>Work & Sip</h3>
+        <div class="price">₦5,000</div>
+      </div>
+      <div class="features">
+        <p>• Unlimited coffee refills</p>
+        <p>• 1 Meal (sandwich or salad)</p>
+        <p>• Wi‑Fi (5 hours) + Power outlet access</p>
+      </div>
+      <div class="cta"><a class="btn ghost" href="#">Book Work & Sip</a></div>
+    </article>
+  </div>
+</section>
+
+<footer class="note">Tip:8029936005 Opay.</footer>
+
+  </div>  <script>
+    // Toggle view between gym and cafe
+    const buttons = document.querySelectorAll('.switch-btn');
+    buttons.forEach(b=>b.addEventListener('click',()=>{
+      buttons.forEach(x=>{x.classList.remove('active');x.setAttribute('aria-selected','false')});
+      b.classList.add('active');b.setAttribute('aria-selected','true');
+      const target = b.dataset.target;
+      document.querySelectorAll('.pricing-set').forEach(s=>{
+        s.style.display = s.id === target ? '' : 'none';
+        s.setAttribute('aria-hidden', s.id === target ? 'false' : 'true');
+      })
+    }))
+  </script></body>
+</html>

@@ -1,0 +1,284 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brand Style Guide </title>
+  <style>
+    /* ========== CONFIG (change these variables) ========== */
+    :root{
+      --brand-1: #0b5fff;     
+      --brand-2: #0b8f6b;       
+      --accent:  #ffb86b;   
+      --muted:   #6b7280;       
+      --bg:      #ffffff;   
+      --fg:      #111827;       
+      --card:    #f8fafc;       
+      --glass:   rgba(11,95,255,0.06);
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --radius: 12px;
+  --spacing: 18px;
+}
+
+/* Dark theme variables (will be applied via .dark on html) */
+html.dark{
+  --bg: #0b1220;
+  --fg: #e6eef8;
+  --card: #081022;
+  --muted: #98a3b3;
+  --glass: rgba(255,184,107,0.06);
+}
+
+/* ========== BASE STYLES ========== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  background:linear-gradient(180deg,var(--bg),color-mix(in srgb,var(--bg) 95%, black 5%));
+  color:var(--fg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  padding:28px;
+}
+
+.container{max-width:1100px;margin:0 auto}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+.brand-meta{display:flex;gap:14px;align-items:center}
+.logo{
+  width:72px;height:72px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;box-shadow:0 6px 18px var(--glass)
+}
+
+h1{font-size:20px;margin:0}
+p.lead{margin:0;color:var(--muted)}
+
+
+/* layout */
+main{display:grid;grid-template-columns:1fr 360px;gap:22px}
+aside{position:sticky;top:28px;height:fit-content}
+
+section.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.06)}
+section.card + section.card{margin-top:14px}
+
+/* Colors grid */
+.swatches{display:flex;gap:12px;flex-wrap:wrap}
+.swatch{flex:1 0 120px;border-radius:10px;overflow:hidden;border:1px solid rgba(0,0,0,0.04)}
+.swatch .sample{height:72px}
+.swatch .meta{padding:10px}
+.swatch code{font-family:monospace;font-size:13px;color:var(--muted)}
+
+/* Typography */
+.type-sample{padding:14px;border-radius:10px;background:linear-gradient(180deg,transparent, rgba(0,0,0,0.02));}
+.h1{font-size:28px;margin:0}
+.h2{font-size:20px;margin:0}
+.lead-text{font-size:15px;color:var(--muted)
+
+/* Example components */
+.btn-row{display:flex;gap:10px;flex-wrap:wrap}
+.card-sample{display:flex;gap:14px;align-items:center}
+.avatar{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--brand-1),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+
+.social-post{border-radius:12px;padding:14px;background:linear-gradient(180deg,var(--card),transparent);border:1px solid rgba(0,0,0,0.03)}
+
+/* token/palette input */
+.row{display:flex;gap:12px;align-items:center}
+.field{display:flex;flex-direction:column}
+input[type="color"]{height:40px;width:64px;border:0;padding:0;border-radius:8px}
+input[type="text"]{padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);min-width:120px}
+
+/* responsive */
+@media (max-width:980px){main{grid-template-columns:1fr}aside{position:relative;top:auto}}
+
+/* print */
+@media print{body{padding:0}header .controls, .no-print{display:none}main{grid-template-columns:1fr}section.card{box-shadow:none}}
+
+/* small helpers */
+small.muted{color:var(--muted)}
+.muted{color:var(--muted)}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand-meta">
+        <div class="logo">DEBISI</div>
+        <div>
+          <h1>Brand Style Guide</h1>
+          <p class="lead">Style.</p>
+        </div>
+      </div>
+</header>
+
+<main>
+  <div>
+    <!-- Brand overview -->
+    <section class="card">
+      <h2 style="margin-top:0">Brand Overview</h2>
+      <p class="muted"><strong>DEBISI</strong></p>
+      <p class="muted"> <em>Style Your Ego</em></p>
+      <p class="muted">Styles for all pockets </p>
+
+      <hr style="margin:14px 0;border:none;border-top:1px solid rgba(0,0,0,0.04)"/>
+
+      <h3 style="margin:6px 0">Mission</h3>
+      <p class="muted">Help choose the right colors .</p>
+      <h3 style="margin:6px 0">Vision</h3>
+      <p class="muted">Best Brand Influencer .</p>
+
+    </section>
+
+    <!-- Logos -->
+    <section class="card">
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <div style="min-width:210px">
+          <div style="width:240px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--brand-1),var(--brand-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:28px">
+          </div>
+          <p class="muted" style="margin:8px 0 0">Head is blank</p>
+        </div>
+
+        <div style="min-width:140px">
+          <div style="width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,var(--brand-1),var(--brand-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700">DEBISI</div>
+          <p class="muted" style="margin:8px 0 0"></p>
+        </div>
+
+      </div>
+
+
+
+    <!-- Color palette -->
+    <section class="card">
+      <h2> Color Palette</h2>
+      <p class="muted">Primary and supporting colors — use the HEX values below to keep consistency.</p>
+
+      <div class="swatches" style="margin-top:12px">
+        <div class="swatch" id="swatch-primary">
+          <div class="sample" style="background:var(--brand-1)"></div>
+          <div class="meta">
+            <strong>Primary</strong>
+            <div><code id="val-primary">--brand-1</code></div>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="sample" style="background:var(--brand-2)"></div>
+          <div class="meta">
+            <strong>Secondary</strong>
+            <div><code id="val-secondary">--brand-2</code></div>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="sample" style="background:var(--accent)"></div>
+          <div class="meta">
+            <strong>Accent</strong>
+            <div><code id="val-accent">--accent</code></div>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="sample" style="background:var(--muted)"></div>
+          <div class="meta">
+            <strong>Muted</strong>
+            <div><code id="val-muted">--muted</code></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <div class="field">
+          <label class="muted">Primary hex</label>
+          <input id="colorPrimary" type="color" value="#0b5fff" />
+        </div>
+        <div class="field">
+          <label class="muted">Secondary hex</label>
+          <input id="colorSecondary" type="color" value="#0b8f6b" />
+        </div>
+        <div class="field">
+          <label class="muted">Accent</label>
+          <input id="colorAccent" type="color" value="#ffb86b" />
+        </div>
+      </div>
+
+    </section>
+
+
+
+    <!-- Iconography & Imagery -->
+    <section class="card">
+      <h2>Imagery & Iconography</h2>
+      <p class="muted">Photography should feel modern and warm.</p>
+
+      <div style="display:flex;gap:12px;align-items:center;margin-top:12px;flex-wrap:wrap">
+        <div style="width:120px;height:80px;border-radius:8px;background:linear-gradient(135deg,var(--brand-1),var(--brand-2));display:flex;align-items:center;justify-content:center;color:white">Photo</div>
+        <div style="width:120px;height:80px;border-radius:8px;background:linear-gradient(135deg,var(--muted),transparent);display:flex;align-items:center;justify-content:center;color:white">Icon</div>
+      </div>
+    </section>
+
+    <!-- Tone of voice -->
+    <section class="card">
+      <h2>Tone of Voice</h2>
+      <p class="muted">How the brand speaks: Friendly, confident, helpful.</p>
+      <ul class="muted">
+        <li> We Use simple language</li>
+        <li>Always Be helpful and direct</li>
+       
+      </ul>
+    </section>
+
+    <!-- Examples -->
+    <section class="card">
+      <h2> Examples & Applications</h2>
+
+      <h4>Buttons</h4>
+      <div class="btn-row" style="margin-top:8px">
+        <button class="btn">Primary</button>
+        <button class="btn ghost">Ghost</button>
+        <button class="btn" style="background:var(--accent);color:black">Accent</button>
+      </div>
+
+      <hr style="margin:12px 0;border:none;border-top:1px solid rgba(0,0,0,0.04)"/>
+
+      <h4>Social Post Mock</h4>
+      <div class="social-post" style="margin-top:8px">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="avatar">BR</div>
+          <div>
+            <div style="font-weight:700">Brand Name</div>
+            <div class="muted" style="font-size:13px">@senuga.com</div>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:12px">Launch day! We're excited to share our new product. Clean design, fast performance, and a human touch.</p>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="btn" style="padding:8px 12px;font-size:14px">Learn more</button>
+          <button class="btn ghost" style="padding:8px 12px;font-size:14px">Share</button>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <aside>
+  
+
+    <section class="card">
+      <h3 style="margin-top:0">Brand Checklist</h3>
+      <ul class="muted">
+        <li>Colors and hex values published</li>
+        <li>Voice and tone documented</li>
+        <li>Social templates created</li>
+      </ul>
+    </section>
+  </aside>
+</main>
+
+  </div>
+  </body>
+</html>
